@@ -1,13 +1,18 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage{multicol}
+\documentclass[a4paper,10pt]{article}
+% \usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{import}
 \usepackage{../../../assets/LaTeX/style}
+\usepackage{array}   % For table formatting
+
+\usepackage{helvet} % Use Helvetica font
+% \renewcommand{\familydefault}{\sfdefault} % Set sans-serif as default font, not recommended
+
 
 % Document colors and font setup
 \definecolor{mycolor}{HTML}{007ACC}
 \definecolor{lightgray}{gray}{0.9}
-\setlength{\columnsep}{1cm}
+\setlength{\columnsep}{0.5cm}
 
 \title{Stochastik \& Statistik - Cheat Sheet}
 \author{Moritz Feuchter}
@@ -17,9 +22,9 @@
 \maketitle
 
 \begin{multicols*}{2}
-\input{sections/section-1.tex}
-\raggedcolumns
-\input{sections/section-2.tex}
-\raggedcolumns
+    \input{sections/section-1}
+    \raggedcolumns
+    \input{sections/section-2}
+    \raggedcolumns
 \end{multicols*}
 \end{document}
