@@ -1,0 +1,25 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{import}
+\usepackage{../../../assets/LaTeX/style}
+
+% Document colors and font setup
+\definecolor{mycolor}{HTML}{007ACC}
+\definecolor{lightgray}{gray}{0.9}
+\setlength{\columnsep}{1cm}
+
+\title{Stochastik \& Statistik - Cheat Sheet}
+\author{Moritz Feuchter}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{multicols*}{2}
+\input{sections/section-1.tex}
+\raggedcolumns
+\input{sections/section-2.tex}
+\raggedcolumns
+\end{multicols*}
+\end{document}
