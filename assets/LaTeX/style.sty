@@ -55,7 +55,7 @@
 \usepackage{graphicx}
 \usepackage{csvsimple}
 \usepackage{colortbl}
-\usepackage{wrapfig}
+% \usepackage{wrapfig}
 
 %see pdf for instructions on tcolorbox
 %for instructions and examples on different boxes, see further below
@@ -86,7 +86,7 @@
 % pgfplot layers
 \usepackage{pgfplots}
 \usepgfplotslibrary{groupplots}
-\usepackage{wrapfig}
+%\usepackage{wrapfig}
 \pgfplotsset{compat=1.7}                                                                
 % Plots  (idk yet how this works i'll figure it out at some point)
 \pgfdeclarelayer{bg}
@@ -291,10 +291,10 @@
 
 %column separation (line)
 \setlength{\columnseprule}{1pt}
-\def\columnseprulecolor{\color{black!20!white}}
+\newcommand{\columnseprulecolor}{\color{black!20!white}}
 
 %more on columns:
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\renewcommand{\newline}{\\}\arraybackslash\hspace{0pt}}m{#1}}
 
 %okay actually forgot what this was whoops
 \newcommand{\wrongArg}{\text{\textcolor{red}{\textbf{Wrong Argument}}}}
