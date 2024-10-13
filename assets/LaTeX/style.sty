@@ -1,5 +1,5 @@
 %adding hyperlinks to document:
-\usepackage[hidelinks,pdftex]{hyperref}
+\RequirePackage[hidelinks,pdftex]{hyperref}
 
 %info:
 \hypersetup{
@@ -12,33 +12,33 @@
 }
 
 %font and language
-\usepackage[utf8]{inputenc}
-\usepackage[english, ngerman]{babel}
-\usepackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[english, ngerman]{babel}
+\RequirePackage[T1]{fontenc}
 
 %"normal" text font:
-\usepackage{lmodern} 
+\RequirePackage{lmodern}
 
 %for code snippets use this:
 %{\fontfamily{cmtt}\selectfont "code you want in different font" }
 
 %page layout/margins:
-\usepackage[left=5mm, right=5mm, bottom=5mm, top=5mm]{geometry}
+\RequirePackage[left=5mm, right=5mm, bottom=5mm, top=5mm]{geometry}
 %for page numbering
 % \usepackage{lastpage}
 
 %for titles:
-\usepackage[explicit]{titlesec}
-\usepackage{titling}
+\RequirePackage[explicit]{titlesec}
+\RequirePackage{titling}
 
 %for underlining:
-\usepackage{ulem}
+\RequirePackage{ulem}
 
 %headers and footers:
-\usepackage{fancyhdr}
+\RequirePackage{fancyhdr}
 
 %lists and tables:
-\usepackage{enumitem}
+\RequirePackage{enumitem}
 \setlist{nolistsep, leftmargin = 4mm}
 
 %how lists are numbered:
@@ -48,43 +48,43 @@
 \setlist[enumerateroman]{label=(\roman*)}
 
 %using multiple columns/rows
-\usepackage{multicol}
-\usepackage{multirow}
+\RequirePackage{multicol}
+\RequirePackage{multirow}
 
 %to adjust boxes & other layout stuff
-\usepackage{graphicx}
-\usepackage{csvsimple}
-\usepackage{colortbl}
+\RequirePackage{graphicx}
+\RequirePackage{csvsimple}
+\RequirePackage{colortbl}
 % \usepackage{wrapfig}
 
 %see pdf for instructions on tcolorbox
 %for instructions and examples on different boxes, see further below
-\usepackage{tcolorbox}
+\RequirePackage{tcolorbox}
 \tcbuselibrary{all}
 
 %use if content extends over multiple pages
-\usepackage{supertabular}
+\RequirePackage{supertabular}
 
 %math symbols:
-\usepackage{bm}
-\usepackage{calc}
-\usepackage{textcomp}
-\usepackage{amsmath}
-\usepackage{esint}
-\usepackage{amssymb}    % \cdots
-\usepackage{commath}
-\usepackage{cancel}     % strike-through terms
-\usepackage{gensymb}
-\usepackage{empheq}
-\usepackage{aligned-overset}
-\usepackage{mathtools}
+\RequirePackage{bm}
+\RequirePackage{calc}
+\RequirePackage{textcomp}
+\RequirePackage{amsmath}
+\RequirePackage{esint}
+\RequirePackage{amssymb}    % \cdots
+\RequirePackage{commath}
+\RequirePackage{cancel}     % strike-through terms
+\RequirePackage{gensymb}
+\RequirePackage{empheq}
+\RequirePackage{aligned-overset}
+\RequirePackage{mathtools}
 
 %used together with tcolorbox/skins
-\usepackage{tikz}
+\RequirePackage{tikz}
 \usetikzlibrary{positioning, calc, fit, matrix, decorations, angles, quotes, babel, 3d, arrows.meta, shadings, shapes.geometric}
 
 % pgfplot layers
-\usepackage{pgfplots}
+\RequirePackage{pgfplots}
 \usepgfplotslibrary{groupplots}
 %\usepackage{wrapfig}
 \pgfplotsset{compat=1.7}                                                                
@@ -266,19 +266,19 @@
 
 
 %title for a section
-\titleformat{\section}{\sffamily\bfseries\boldmath\large}{}{0pt}{\colorbox{section}{\parbox[c][2.5mm]{\linewidth - 4pt}{\textcolor{black}{#1}}}}
+\titleformat{\section}{\sffamily\bfseries\boldmath\large}{}{0pt}{\colorbox{section}{\parbox[c][2.5mm]{\linewidth - 4pt}{\textcolor{black}{\#1}}}}
 
 %subsection
-\titleformat{\subsection}{\sffamily\bfseries\boldmath\large}{}{0pt}{\textcolor{subsection}{#1 \raisedrulefill[0.4ex]{1.2pt}}}
+\titleformat{\subsection}{\sffamily\bfseries\boldmath\large}{}{0pt}{\textcolor{subsection}{\#1 \raisedrulefill[0.4ex]{1.2pt}}}
 
 %subsubsection
-\titleformat{\subsubsection}{\sffamily\bfseries\boldmath}{}{0pt}{\textcolor{subsubsection}{#1 \raisedrulefill[0.4ex]{1pt}}}
+\titleformat{\subsubsection}{\sffamily\bfseries\boldmath}{}{0pt}{\textcolor{subsubsection}{\#1 \raisedrulefill[0.4ex]{1pt}}}
 
 %paragraph
-\titleformat{\paragraph}{\sffamily\bfseries\boldmath\small}{}{0pt}{\textcolor{paragraph}{#1 \raisedrulefill[0.4ex]{0.5pt}}}
+\titleformat{\paragraph}{\sffamily\bfseries\boldmath\small}{}{0pt}{\textcolor{paragraph}{\#1 \raisedrulefill[0.4ex]{0.5pt}}}
 
 %subparagraph - basically just underline 
-\titleformat{\subparagraph}[runin]{\sffamily\bfseries\boldmath}{}{0pt}{\uline{#1}}
+\titleformat{\subparagraph}[runin]{\sffamily\bfseries\boldmath}{}{0pt}{\uline{\#1}}
 
 %title spacing:
 \setlength\parindent{0pt}
@@ -291,7 +291,7 @@
 
 %column separation (line)
 \setlength{\columnseprule}{1pt}
-\newcommand{\columnseprulecolor}{\color{black!20!white}}
+\renewcommand{\columnseprulecolor}{\color{black!20!white}}
 
 %more on columns:
 \newcolumntype{C}[1]{>{\centering\renewcommand{\newline}{\\}\arraybackslash\hspace{0pt}}m{#1}}
