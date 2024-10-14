@@ -17,3 +17,6 @@ def plot_data(data):
     plt.ylabel('y-Achse')
     plt.title('Bivariate Data')
     plt.show()
+
+def list_to_no_space_string(lst):
+    return "[" + ",".join(map(str, lst)) + "]"
