@@ -1,8 +1,12 @@
 
 import helper_functions as hf
+from collections import defaultdict
 
 # replace with your data from your quiz!
 bivariate_data = [[6, 5] , [4, -2] , [8, -5] , [-3, 6] , [-7, -13] , [-4, 0] , [-4, 3] , [-12, 4] , [-4, 12]]
+
+# Change according to the instructions in the quiz:
+number_of_decimal_places = 2
 
 
 hf.plot_data(bivariate_data)
@@ -20,30 +24,7 @@ sorted_x_coordinates_str = hf.list_to_no_space_string(sorted_x_coordinates)
 print('(2) sorted x-Coordinates:', sorted_x_coordinates_str)
 
 # 3: ranking list of x-Coordinates:
-
-# Create a dictionary to store the average ranks for duplicates
-rank_dict = defaultdict(list)
-
-# Populate the dictionary with indices for each value
-for i, x in enumerate(sorted_x_coordinates):
-    rank_dict[x].append(i + 1)
-
-# Compute the middle rank for each value
-final_ranking = {}
-for key, ranks in rank_dict.items():
-    # If there are multiple occurrences, find the middle rank
-    if len(ranks) > 1:
-        avg_rank = sum(ranks) / len(ranks)
-        final_ranking[key] = avg_rank
-    else:
-        final_ranking[key] = ranks[0]
-
-# Create the ranking list based on the original x_coordinates
-ranking_list = [
-    int(final_ranking[x]) if final_ranking[x] % 1 == 0 else final_ranking[x]
-    for x in x_coordinates
-]
-
+ranking_list = hf.get_ranking_list(x_coordinates)
 ranking_list_str = hf.list_to_no_space_string(ranking_list)
 print('(3) ranking list of x-Coordinates:', ranking_list_str)
 
@@ -57,5 +38,13 @@ print('(4) y-Coordinates:', y_coordinates_str)
 sorted_y_coordinates = sorted(y_coordinates)
 sorted_y_coordinates_str = hf.list_to_no_space_string(sorted_y_coordinates)
 print('(5) sorted y-Coordinates:', sorted_y_coordinates_str)
+
+# 6: ranking list of y-Coordinates:
+ranking_list = hf.get_ranking_list(y_coordinates)
+ranking_list_str = hf.list_to_no_space_string(ranking_list)
+print('(6) ranking list of y-Coordinates:', ranking_list_str)
+
+
+
 
 
