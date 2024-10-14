@@ -2,6 +2,7 @@ from collections import defaultdict
 
 import matplotlib.pyplot as plt
 
+
 def plot_data(data):
     """
     Plots the data in a scatter plot with the same look as in the quiz.
@@ -20,14 +21,17 @@ def plot_data(data):
     plt.title('Bivariate Data')
     plt.show()
 
+
 def list_to_no_space_string(lst):
     """
     Converts a list to a string without spaces.
+
     :param list lst: The list to convert.
     :return: string without spaces
     :rtype: str
     """
     return "[" + ",".join(map(str, lst)) + "]"
+
 
 def get_ranking_list(coordinates):
     """

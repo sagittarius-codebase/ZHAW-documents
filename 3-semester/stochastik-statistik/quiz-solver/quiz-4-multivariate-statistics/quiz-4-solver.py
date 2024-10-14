@@ -1,13 +1,11 @@
-
 import helper_functions as hf
 from math import sqrt
 
 # replace with your data from your quiz!
-bivariate_data = [[6, 5] , [4, -2] , [8, -5] , [-3, 6] , [-7, -13] , [-4, 0] , [-4, 3] , [-12, 4] , [-4, 12]]
+bivariate_data = [[6, 5], [4, -2], [8, -5], [-3, 6], [-7, -13], [-4, 0], [-4, 3], [-12, 4], [-4, 12]]
 
 # Change according to the instructions in the quiz:
 number_of_decimal_places = 2
-
 
 hf.plot_data(bivariate_data)
 
@@ -27,7 +25,6 @@ print('(2) sorted x-Coordinates:', sorted_x_coordinates_str)
 ranking_list_x = hf.get_ranking_list(x_coordinates)
 ranking_list_x_str = hf.list_to_no_space_string(ranking_list_x)
 print('(3) ranking list of x-Coordinates:', ranking_list_x_str)
-
 
 # 4: y-Coordinates:
 y_coordinates = [data[1] for data in bivariate_data]
@@ -64,7 +61,8 @@ print('(8) Pearson\'s correlation coefficient:', round(pearsons_correlation_coef
 
 mean_ranking_x = sum(ranking_list_x) / len(ranking_list_x)
 mean_ranking_y = sum(ranking_list_y) / len(ranking_list_y)
-covariance_ranking_lists = sum([(x - mean_ranking_x) * (y - mean_ranking_y) for x, y in zip(ranking_list_x, ranking_list_y)]) / len(ranking_list_x)
+covariance_ranking_lists = sum(
+    [(x - mean_ranking_x) * (y - mean_ranking_y) for x, y in zip(ranking_list_x, ranking_list_y)]) / len(ranking_list_x)
 
 print('(9) Covariance of the ranking lists (not corrected):', round(covariance_ranking_lists, number_of_decimal_places))
 
@@ -82,8 +80,3 @@ std_dev_ranking_y = sqrt(variance_ranking_y)
 spearman_correlation_coefficient = covariance_ranking_lists / (std_dev_ranking_x * std_dev_ranking_y)
 
 print('(10) Spearman\'s correlation coefficient:', round(spearman_correlation_coefficient, number_of_decimal_places))
-
-
-
-
-
