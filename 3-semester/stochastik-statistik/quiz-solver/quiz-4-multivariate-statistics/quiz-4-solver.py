@@ -1,6 +1,6 @@
 
 import helper_functions as hf
-from collections import defaultdict
+from math import sqrt
 
 # replace with your data from your quiz!
 bivariate_data = [[6, 5] , [4, -2] , [8, -5] , [-3, 6] , [-7, -13] , [-4, 0] , [-4, 3] , [-12, 4] , [-4, 12]]
@@ -52,5 +52,12 @@ covariance = sum([(x - mean_x) * (y - mean_y) for x, y in bivariate_data]) / len
 
 print('(7) Covariance (not corrected):', round(covariance, number_of_decimal_places))
 
+# 8: Pearson's correlation coefficient:
+variance_x = sum([(x - mean_x) ** 2 for x in x_coordinates]) / len(x_coordinates)
+variance_y = sum([(y - mean_y) ** 2 for y in y_coordinates]) / len(y_coordinates)
+
+pearsons_correlation_coefficient = covariance / sqrt(variance_x * variance_y)
+
+print('(8) Pearson\'s correlation coefficient:', round(pearsons_correlation_coefficient, number_of_decimal_places))
 
 
