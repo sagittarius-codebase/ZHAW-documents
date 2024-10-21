@@ -14,7 +14,7 @@ def power_set_of_set(my_set):
 
     # remove curly braces and split
     my_set = my_set[1:-1].split(",")
-    my_set = list(map(int, my_set))
+    my_set = [element.strip() for element in my_set]
 
     power_set = [[]]
     for element in my_set:
