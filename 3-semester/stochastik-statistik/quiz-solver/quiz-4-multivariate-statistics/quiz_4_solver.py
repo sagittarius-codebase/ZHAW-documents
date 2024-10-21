@@ -2,7 +2,8 @@ import helper_functions as hf
 from math import sqrt
 
 # replace with your data from your quiz!
-bivariate_data = [[6, 5], [4, -2], [8, -5], [-3, 6], [-7, -13], [-4, 0], [-4, 3], [-12, 4], [-4, 12]]
+# bivariate_data = [[6, 5], [4, -2], [8, -5], [-3, 6], [-7, -13], [-4, 0], [-4, 3], [-12, 4], [-4, 12]]
+bivariate_data = [[1,-7],[-5,3],[0,0],[-9,1],[2,4],[-4,-9],[-13,13],[2,3],[0,2],[-4,1],[-14,-9]]
 
 # Change according to the instructions in the quiz:
 number_of_decimal_places = 2
