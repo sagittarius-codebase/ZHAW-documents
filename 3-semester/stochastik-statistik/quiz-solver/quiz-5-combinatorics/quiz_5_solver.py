@@ -2,6 +2,7 @@ import power_set as ps
 import number_of_arrangements as noa
 import number_of_tests as nots
 import number_of_positive_integers as nopi
+import number_of_distribution_to_server as nodts
 
 ####################################################################################################
 # Exercise: Power set of a set
@@ -53,3 +54,26 @@ number_of_digits = 10
 
 number_of_positive_integers = nopi.number_of_positive_integers_with_digit(digit, number_of_digits)
 print("Number of positive integers with at least the digit", digit, "in it is:", number_of_positive_integers, "\n")
+
+
+####################################################################################################
+# Exercise: n copies of a backup are distributed to x servers. How many ways can the copies be distributed?
+# (also possible to have no or all copy on a server)
+#
+# Part 2: Now m copies are distributed to x servers. How many ways can the copies be distributed if at least one copy is on each server?
+####################################################################################################
+
+# Replace the following with the number of copies and the number of servers of your quiz:
+number_of_servers = 5
+number_of_copies_part_1 = 9
+number_of_copies_part_2 = 9
+
+# Part 1:
+number_of_distribution_part_1 = nodts.number_of_distribution_to_server(number_of_servers, number_of_copies_part_1)
+print("Number of ways you can distribute", number_of_copies_part_1, "copies to", number_of_servers, "servers is:", number_of_distribution_part_1)
+
+# Part 2:
+effective_number_of_copies_part_2 = number_of_copies_part_2 - number_of_servers
+number_of_distribution_part_2 = nodts.number_of_distribution_to_server(number_of_servers, effective_number_of_copies_part_2)
+print("Number of ways you can distribute", number_of_copies_part_2, "copies to", number_of_servers, "servers is, if at least one copy is on each server:", number_of_distribution_part_2, "\n")
+
