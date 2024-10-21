@@ -13,7 +13,7 @@ def number_of_tests_to_run(pos_val_input_vectors, test_coverage):
 
     number_of_tests = 1
 
-    pos_results = re.findall(r'\[([0-9, ]+)]', pos_val_input_vectors)
+    pos_results = re.findall(r'\[([-\d, ]+)]', pos_val_input_vectors)
     pos_results_lists = [list(map(int, match.split(', '))) for match in pos_results]
 
 
