@@ -1,4 +1,6 @@
+import math
 import re
+from math import ceil
 
 def number_of_tests_to_run(pos_val_input_vectors, test_coverage):
     """
@@ -20,4 +22,4 @@ def number_of_tests_to_run(pos_val_input_vectors, test_coverage):
     for sub_list in pos_results_lists:
         number_of_tests *= len(sub_list)
 
-    return int(number_of_tests * test_coverage / 100)
+    return int(math.ceil((test_coverage / 100) * number_of_tests))
