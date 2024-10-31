@@ -13,4 +13,4 @@ def get_expected_val(x, pmf):
         if isinstance(pmf[i], str):
             pmf[i] = eval(pmf[i])
         expected_val += x[i] * pmf[i]
-    return int(expected_val * 10000) / 10000
+    return round(int(expected_val * 100000) / 100000, 4)

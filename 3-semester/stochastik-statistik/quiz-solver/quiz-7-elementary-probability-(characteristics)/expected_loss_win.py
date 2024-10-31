@@ -16,4 +16,4 @@ def get_expected_loss_win(x, pmf, pay_per_roll, number_of_dice_rolls):
         expected_win_one_roll += x[i] * eval(pmf[i])
 
     expected_win = expected_win_one_roll * number_of_dice_rolls
-    return int(expected_win * 1000) / 1000
+    return round(int(expected_win * 100000) / 100000, 4)
