@@ -14,10 +14,10 @@ MUST_BE_THE_SAME = "The number of x values and PMF values must be the same."
 print("Exercise: Casino with non-standard dice\n")
 
 # Replace the following values with the values in your quiz:
-number_of_dice_rolls = 36
-pay_per_roll = 4
+number_of_dice_rolls = 50
+pay_per_roll = 5
 x = [1, 2, 3, 4, 5, 6]
-PMF = ["3/10", "1/6", "7/30", "2/15", "2/15", "1/30"]
+PMF = ["2/21", "2/21", "4/21", "2/21", "3/7", "2/21"]
 
 # print out the table to check if the values are correct
 helper.print_table(x, PMF)
@@ -43,8 +43,8 @@ print("Exercise: Graphic with CDF\n")
 # The x-values are the values where the CDF jumps.
 # the PMF values are the jump-amounts of the CDF values.
 
-x_values = [2, 4, 5, 6, 8]
-PMF_values = [0.2, 0.1, 0.2, 0.1, 0.4]
+x_values = [2, 4, 6, 7, 8]
+PMF_values = [0.1, 0.2, 0.2, 0.1, 0.4]
 
 assert len(x_values) == len(PMF_values), MUST_BE_THE_SAME
 assert sum(PMF_values) == 1, SUM_MUSST_BE_1
@@ -62,8 +62,8 @@ print("#" * 100 + "\n")
 print("Exercise: expected value, expected value of the square, and variance of a random variable\n")
 
 # Replace the following values with the values in your quiz:
-x_values = [1, 2, 3, 7]
-PMF_values = ["0.1", "0.2", "0.6", "0.1"]
+x_values = [1, 2, 3, 8]
+PMF_values = ["0.2", "0.1", "0.6", "0.1"]
 
 # print out the table to check if the values are correct
 helper.print_table(x_values, PMF_values)
@@ -84,7 +84,7 @@ print("#" * 100 + "\n")
 print("Exercise: ONLY expected value of a random variable\n")
 
 # Replace the following values with the values in your quiz:
-x_values = [3, 4, 5, 6, 7]
+x_values = [2, 4, 6, 7, 8]
 PMF_values = ["0.1", "0.1", "0.1", "0.5", "0.2"]
 
 # print out the table to check if the values are correct
