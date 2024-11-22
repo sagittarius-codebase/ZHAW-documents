@@ -5,6 +5,7 @@
 
 # Imports:
 from scipy.stats import poisson
+from math import log, ceil
 
 
 ####################################################################################################
@@ -29,5 +30,15 @@ correct_result_prob = 0.28
 minimum_prob_for_correct_result = 0.93
 
 # Calculate the minimum number of repetitions needed to reach the minimum probability for a correct result:
+# Actual equation: (0.28 = p, 0.93 = P, n = number of repetitions)
+# P( X >= 1 ) ≥ 0.93
+# 1 - P( X < 1 ) ≥ 0.93
+# 1 - P( X = 0 ) ≥ 0.93
+# 1 - 0.93 ≥ P( X = 0 ) = nCr( n, 0 ) * 0.28^0 * (1 - 0.28)^(n-0)
+# 0.07 ≥ 0.72^n
+# n = log(0.07) / log(0.72)
 
+n = ceil(log(1 - minimum_prob_for_correct_result) / log(1 - correct_result_prob))
+
+print("The minimum number of repetitions needed to reach the minimum probability for a correct result is:", n, "\n")
 
