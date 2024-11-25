@@ -26,7 +26,7 @@ print("The intervall that contains 99.7% of the values is:", lower_bound, "to", 
 ####################################################################################################
 
 # Replace the following with the values of your quiz:
-value = 1.87 # value x in: P(X <= x)
+value = 0.97 # value x in: P(X <= x)
 
 print("Search in your table for the value and determine the probability that the value is less or equal to.")
 print("value = ", value, "\n")
@@ -36,9 +36,9 @@ print("value = ", value, "\n")
 ####################################################################################################
 
 # Replace the following with the values of your quiz:
-expected_value = 40 # μ
-standard_deviation = 10 # σ
-value = 63
+expected_value = 60 # μ
+standard_deviation = 20 # σ
+value = 118
 
 # determine the probability that the value is less or equal to 63:
 z = (value - expected_value) / standard_deviation
@@ -51,19 +51,19 @@ print("z = ", z, "\n")
 ####################################################################################################
 
 # Replace the following with the values of your quiz:
-value = 2.89 # value x in: P(X > x)
+value = 1.28 # value x in: P(X > x)
 
 print("Search in your table for the value and determine the probability that the value is higher than.")
 print("value = ", value)
-print("An then subtract the value from 1 to get the probability that the value is higher than. -> P(X > x) = 1 - P(X <= x)")
+print("An then subtract the value from 1 to get the probability that the value is higher than. -> P(X > x) = 1 - P(X <= x)\n")
 
 ####################################################################################################
 # Exercise 5: general standardization of a normal distribution
 ####################################################################################################
 
 # Replace the following with the values of your quiz:
-expected_value = -1 # μ
-standard_deviation = 3 # σ
+expected_value = -4 # μ
+standard_deviation = 5 # σ
 
 # How to calculate U out of X generally?
 
