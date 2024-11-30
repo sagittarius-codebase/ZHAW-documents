@@ -8,6 +8,7 @@ import scipy.stats as stats
 
 ####################################################################################################
 # Exercise 1: random generator generates numbers
+print("Exercise 1: random generator generates numbers")
 ####################################################################################################
 
 # Replace the following with the values of your quiz:
@@ -55,4 +56,30 @@ print(f"Either you got to your STS table and search for the value z = {abs(z):.2
 print(f"Or you just use this result: P({output_type} {comparison} {value:.2f}) = {p:.3f}")
 
 
+####################################################################################################
+# Exercise 2: expected value and variance based on the given values
+print("\nExercise 2: expected value and variance based on the given values")
+################################################################################################
+
+# Replace the following with the values of your quiz:
+number_of_variables = 40
+expected_value = 8
+variance = 6
+
+# differentiate between sum and mean:
+is_sum = True
+
+# Calculations:
+summed_expected_val = number_of_variables * expected_value
+summed_variance = number_of_variables * variance
+
+mean_expected_val = expected_value
+mean_variance = variance / number_of_variables
+
+if is_sum:
+    print(f"Expected value of the sum: {summed_expected_val}")
+    print(f"Variance of the sum: {summed_variance}")
+else:
+    print(f"Expected value of the mean: {mean_expected_val}")
+    print(f"Variance of the mean: {mean_variance}")
 
