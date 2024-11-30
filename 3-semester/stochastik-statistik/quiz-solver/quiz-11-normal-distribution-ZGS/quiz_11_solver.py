@@ -5,6 +5,7 @@
 
 # imports:
 import scipy.stats as stats
+import scipy.integrate as integrate
 
 ####################################################################################################
 # Exercise 1: random generator generates numbers
@@ -110,6 +111,35 @@ else:
 approx_upper_bound = upper_bound + 0.5
 
 print("P (" + str(lower_bound) + " ≤ X ≤ " + str(upper_bound) + ") ~ P (" + str(approx_lower_bound) + " ≤ X ≤ " + str(approx_upper_bound) + ")")
+
+
+####################################################################################################
+# Exercise 4: number of datapoints below a function curve in a Unit square
+print("\nExercise 4: number of datapoints below a function curve in a Unit square")
+####################################################################################################
+
+# Replace the following with the values of your quiz:
+number_of_datapoints = 20
+
+# for example: E(1/20 X) and V(1/20 X)
+fraction_of_datapoints = 1 / 20
+
+# function:
+function = lambda x: (3 * (1 - x) * (x + 1/5)) / 2
+
+# Calculations:
+function_integral = integrate.quad(function, 0, 1)[0]
+# the area can be used as the probability
+
+expected_value = number_of_datapoints * function_integral
+variance = number_of_datapoints * function_integral * (1 - function_integral)
+
+fraction_expected_value = expected_value * fraction_of_datapoints
+fraction_variance = variance * (fraction_of_datapoints ** 2)
+
+print(f"E(1/{number_of_datapoints} X) = {fraction_expected_value:.3f}")
+print(f"V(1/{number_of_datapoints} X) = {fraction_variance:.3f}")
+
 
 
 
