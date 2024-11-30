@@ -52,7 +52,7 @@ p = stats.norm.cdf(z) if at_maximum else 1 - stats.norm.cdf(z)
 comparison = "≤" if at_maximum else ">"
 output_type = "X" if is_sum else "X̄"
 
-print(f"Either you got to your STS table and search for the value z = {abs(z):.2f}, maybe you need interpolation.")
+print(f"Either you got to your STS table and search for the value z = {abs(z):.4f}, maybe you need interpolation.")
 print(f"Or you just use this result: P({output_type} {comparison} {value:.2f}) = {p:.3f}")
 
 
@@ -82,4 +82,35 @@ if is_sum:
 else:
     print(f"Expected value of the mean: {mean_expected_val}")
     print(f"Variance of the mean: {mean_variance}")
+
+
+####################################################################################################
+# Exercise 3: binomial distribution approximation via normal distribution
+print("\nExercise 3: binomial distribution approximation via normal distribution")
+####################################################################################################
+
+# Replace the following with the values of your quiz:
+
+# in B(n, p)
+number_of_repetitions = 100 # n
+probability = 0.3 # p
+
+# probability P (X ≤/< x ≤ Y)
+lower_bound = 20
+upper_bound = 33
+
+# bigger than or equal-bigger than:
+bigger_than = False
+
+# Calculations:
+if bigger_than:
+    approx_lower_bound = lower_bound + 0.5
+else:
+    approx_lower_bound = lower_bound - 0.5
+approx_upper_bound = upper_bound + 0.5
+
+print("P (" + str(lower_bound) + " ≤ X ≤ " + str(upper_bound) + ") ~ P (" + str(approx_lower_bound) + " ≤ X ≤ " + str(approx_upper_bound) + ")")
+
+
+
 
