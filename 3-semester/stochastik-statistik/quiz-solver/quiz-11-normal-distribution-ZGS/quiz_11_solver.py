@@ -15,12 +15,12 @@ print("Exercise 1: random generator generates numbers")
 # Replace the following with the values of your quiz:
 
 # range:
-lower_bound = 21
-upper_bound = 29
+lower_bound = 26
+upper_bound = 38
 # lower_bound ≤ z ≤ upper_bound
 
-amount = 396
-value = 9804
+amount = 153
+value = 4785
 # variations of the exercise:
 
 # at maximum or at minimum:
@@ -31,12 +31,14 @@ is_sum = True
 
 # Calculations:
 expected_val = (lower_bound + upper_bound) / 2
+print(f"Expected value: {expected_val}")
 
 variation = ((upper_bound - lower_bound) * (upper_bound - lower_bound + 2)) / 12
+print(f"Variation: {variation}")
 
 summed_expected_val = amount * expected_val
 summed_variation = amount * variation
-summed_standard_deviation = summed_variation ** 0.5
+standard_deviation = summed_variation ** 0.5
 
 mean_expected_val = expected_val
 mean_variation = variation
@@ -44,7 +46,7 @@ mean_standard_deviation = mean_variation ** 0.5
 
 
 if is_sum:
-    z = (value - summed_expected_val) / summed_standard_deviation
+    z = (value - summed_expected_val) / standard_deviation
 else:
     z = (value - mean_expected_val) / mean_standard_deviation
 
@@ -54,7 +56,7 @@ comparison = "≤" if at_maximum else ">"
 output_type = "X" if is_sum else "X̄"
 
 print(f"Either you got to your STS table and search for the value z = {abs(z):.4f}, maybe you need interpolation.")
-print(f"Or you just use this result: P({output_type} {comparison} {value:.2f}) = {p:.3f}")
+print(f"Or you just use this result: P({output_type} {comparison} {value:.2f}) = {p:.4f} (not recommended)")
 
 
 ####################################################################################################
@@ -63,9 +65,9 @@ print("\nExercise 2: expected value and variance based on the given values")
 ################################################################################################
 
 # Replace the following with the values of your quiz:
-number_of_variables = 40
-expected_value = 8
-variance = 6
+number_of_variables = 5
+expected_value = 15
+variance = 2
 
 # differentiate between sum and mean:
 is_sum = True
@@ -93,25 +95,31 @@ print("\nExercise 3: binomial distribution approximation via normal distribution
 # Replace the following with the values of your quiz:
 
 # in B(n, p)
-number_of_repetitions = 100 # n
-probability = 0.3 # p
+number_of_repetitions = 90 # n
+probability = 0.7 # p
 
-# probability P (X ≤/< x ≤ Y)
-lower_bound = 20
-upper_bound = 33
+# probability P (X ≤/< x ≤/< Y)
+lower_bound = 12
+upper_bound = 42
 
-# bigger than or equal-bigger than:
-bigger_than = False
+# bigger than or equal-bigger than (False = bigger than (<) and not equal-bigger than (≤))
+bigger_than_lower_bound = True
+bigger_than_upper_bound = False
 
 # Calculations:
-if bigger_than:
-    approx_lower_bound = lower_bound + 0.5
-else:
-    approx_lower_bound = lower_bound - 0.5
-approx_upper_bound = upper_bound + 0.5
+lower_bound_correction = 0.5 if bigger_than_lower_bound else -0.5
+upper_bound_correction = -0.5 if bigger_than_upper_bound else 0.5
 
-print("P (" + str(lower_bound) + " ≤ X ≤ " + str(upper_bound) + ") ~ P (" + str(approx_lower_bound) + " ≤ X ≤ " + str(approx_upper_bound) + ")")
+approx_lower_bound = lower_bound + lower_bound_correction
+approx_upper_bound = upper_bound + upper_bound_correction
 
+print("P (" + str(lower_bound) + " ≤/< X ≤/< " + str(upper_bound) + ") ~ P (" + str(approx_lower_bound) + " < X ≤ " + str(approx_upper_bound) + ")")
+
+expected_value = number_of_repetitions * probability
+variance = number_of_repetitions * probability * (1 - probability)
+
+print(f"Expected value: {expected_value:.2f}")
+print(f"Variance: {variance:.2f}")
 
 ####################################################################################################
 # Exercise 4: number of datapoints below a function curve in a Unit square
@@ -119,13 +127,13 @@ print("\nExercise 4: number of datapoints below a function curve in a Unit squar
 ####################################################################################################
 
 # Replace the following with the values of your quiz:
-number_of_datapoints = 20
+number_of_datapoints = 36
 
 # for example: E(1/20 X) and V(1/20 X)
-fraction_of_datapoints = 1 / 20
+fraction_of_datapoints = 1 / 36
 
 # function:
-function = lambda x: (3 * (1 - x) * (x + 1/5)) / 2
+function = lambda x: (1 * (1 - x) * (x + 1/3)) / 1
 
 # Calculations:
 function_integral = integrate.quad(function, 0, 1)[0]
