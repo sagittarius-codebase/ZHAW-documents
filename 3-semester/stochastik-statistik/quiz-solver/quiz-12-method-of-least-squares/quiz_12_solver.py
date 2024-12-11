@@ -14,6 +14,13 @@ import math
 print("Exercise 1: linear regression based on data points")
 
 # replace the following values with the given data points:
+
+# min and max values for graph:
+x_min = -4
+x_max = 2
+y_min = -3
+y_max = 4
+
 x_i = np.array([[-1], [0], [2]])
 y_i = np.array([[-2], [-3], [1]])
 
@@ -86,11 +93,21 @@ d_x = x_avg - m_x * y_avg
 print(f"\n(7) The regression line is: x(y) = {m_x:.2f} * y + {d_x:.2f}")
 print(f"So: m' = {m_x:.2f} and d' = {d_x:.2f}")
 
-# visualize the data with matplotlib points to check for correctness:
+# visualize the data and function with matplotlib points to check for correctness:
 data = np.array(data)
-plt.scatter(data[:, 0], data[:, 1], s=100, c='red', marker='*')
+x = np.linspace(-10, 10, 100)
+func_y = lambda x: m_y * x + d_y
+func_x = lambda y: m_x * y + d_x
+plt.scatter(data[:, 0], data[:, 1], s=300, c='red', marker='*')
+plt.plot(x, func_y(x), label=f"y(x) = {m_y:.2f} * x + {d_y:.2f}", c='blue')
+plt.plot(func_x(x), x, label=f"x(y) = {m_x:.2f} * y + {d_x:.2f}", c='green')
 plt.title("Data points")
 plt.xlabel("x")
 plt.ylabel("y")
-plt.grid()
+plt.axhline(0, color='black', lw=0.5)
+plt.axvline(0, color='black', lw=0.5)
+plt.ylim(y_min, y_max)
+plt.xlim(x_min, x_max)
+plt.legend()
+plt.tick_params(axis='both', which='both', direction='in', length=6, width=1, colors='black', grid_color='black', grid_alpha=0.5, top = True, right = True)
 plt.show()
