@@ -15,14 +15,8 @@ print("Exercise 1: linear regression based on data points")
 
 # replace the following values with the given data points:
 
-# min and max values for graph:
-x_min = -4
-x_max = 2
-y_min = -3
-y_max = 4
-
-x_i = np.array([[-1], [0], [2]])
-y_i = np.array([[-2], [-3], [1]])
+x_i = np.array([[-1], [2], [3]])
+y_i = np.array([[-3], [7], [4]])
 
 # based on the equation: g(x) = β_0 + β_1 * x
 factor_on_beta_0 = 1
@@ -33,7 +27,7 @@ print("The Matrix based on the two vectors: ")
 print(x_i)
 print("and")
 print(y_i)
-print("is:")
+print("is:\n")
 
 print(np.hstack((factor_vector, x_i)))
 
@@ -46,10 +40,18 @@ print(y_i)
 print("\n\nExercise 2: linear regression, residual variance and correlation coefficient, etc. based on bivariate data")
 
 # replace the following values with the given data points:
-data = [[-3, 4],
-        [-4, 4],
-        [2, -1],
-        [-1, -3]]
+data = [[2, 4],
+        [-2, -1],
+        [3, -4],
+        [-1, -2],
+        [1, 2],
+        [2, -3]]
+
+# min and max values for graph:
+x_min = -2
+x_max = 3
+y_min = -4
+y_max = 4
 
 
 x_avg = np.mean([x[0] for x in data])
@@ -58,6 +60,12 @@ y_avg = np.mean([x[1] for x in data])
 variance_x = np.var([x[0] for x in data])
 variance_y = np.var([x[1] for x in data])
 covariance = np.cov([x[0] for x in data], [x[1] for x in data], bias=True)[0][1]
+
+print("x_avg:", x_avg)
+print("y_avg:", y_avg)
+print("variance_x:", variance_x)
+print("variance_y:", variance_y)
+print("covariance:", covariance)
 
 
 # (1) regression line (to y): -> y(x) = m * x + d
@@ -72,7 +80,7 @@ print(f"\n(2) The residual variance is: {residual_variance:.2f}")
 
 # (3) explained variance:
 explained_variance = covariance ** 2 / variance_x
-print(f"\n(3) The explained variance is: {explained_variance:.2f}")
+print(f"\n(3) The explained variance is: {explained_variance:.4f}")
 
 # (4) total variance:
 total_variance = residual_variance + explained_variance
@@ -80,7 +88,7 @@ print(f"\n(4) The total variance is: {total_variance:.2f}")
 
 # (5) Determinacy measure:
 determinacy_measure = explained_variance / total_variance
-print(f"\n(5) The determinacy measure is: {determinacy_measure:.2f}")
+print(f"\n(5) The determinacy measure is: {determinacy_measure:.4f}")
 
 # (6) Pearson correlation coefficient:
 correlation_coefficient = math.sqrt(determinacy_measure)
