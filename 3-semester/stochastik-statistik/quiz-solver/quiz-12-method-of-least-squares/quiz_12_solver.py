@@ -80,7 +80,7 @@ print(f"\n(2) The residual variance is: {residual_variance:.2f}")
 
 # (3) explained variance:
 explained_variance = covariance ** 2 / variance_x
-print(f"\n(3) The explained variance is: {explained_variance:.4f}")
+print(f"\n(3) The explained variance is: {explained_variance:.2f}")
 
 # (4) total variance:
 total_variance = residual_variance + explained_variance
@@ -88,7 +88,7 @@ print(f"\n(4) The total variance is: {total_variance:.2f}")
 
 # (5) Determinacy measure:
 determinacy_measure = explained_variance / total_variance
-print(f"\n(5) The determinacy measure is: {determinacy_measure:.4f}")
+print(f"\n(5) The determinacy measure is: {determinacy_measure:.2f}")
 
 # (6) Pearson correlation coefficient:
 correlation_coefficient = math.sqrt(determinacy_measure)
