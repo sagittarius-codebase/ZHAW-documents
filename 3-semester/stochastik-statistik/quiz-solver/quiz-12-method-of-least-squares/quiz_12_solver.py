@@ -6,6 +6,7 @@
 # Imports:
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 
 ####################################################################################################
 # Exercise 1: linear regression based on data points
@@ -44,8 +45,46 @@ data = [[-3, 4],
         [-1, -3]]
 
 
+x_avg = np.mean([x[0] for x in data])
+y_avg = np.mean([x[1] for x in data])
+
+variance_x = np.var([x[0] for x in data])
+variance_y = np.var([x[1] for x in data])
+covariance = np.cov([x[0] for x in data], [x[1] for x in data], bias=True)[0][1]
 
 
+# (1) regression line (to y): -> y(x) = m * x + d
+m_y = covariance / variance_x
+d_y = y_avg - m_y * x_avg
+print(f"\n(1) The regression line is: y(x) = {m_y:.2f} * x + {d_y:.2f}")
+print(f"So: m = {m_y:.2f} and d = {d_y:.2f}")
+
+# (2) residual variance:
+residual_variance = variance_y - (covariance ** 2) / variance_x
+print(f"\n(2) The residual variance is: {residual_variance:.2f}")
+
+# (3) explained variance:
+explained_variance = covariance ** 2 / variance_x
+print(f"\n(3) The explained variance is: {explained_variance:.2f}")
+
+# (4) total variance:
+total_variance = residual_variance + explained_variance
+print(f"\n(4) The total variance is: {total_variance:.2f}")
+
+# (5) Determinacy measure:
+determinacy_measure = explained_variance / total_variance
+print(f"\n(5) The determinacy measure is: {determinacy_measure:.2f}")
+
+# (6) Pearson correlation coefficient:
+correlation_coefficient = math.sqrt(determinacy_measure)
+correlation_coefficient = -correlation_coefficient if m_y < 0 else correlation_coefficient
+print(f"\n(6) The Pearson correlation coefficient is: {correlation_coefficient:.2f}")
+
+# (7) regression line (to x): -> x(y) = m' * y + d'
+m_x = covariance / variance_y
+d_x = x_avg - m_x * y_avg
+print(f"\n(7) The regression line is: x(y) = {m_x:.2f} * y + {d_x:.2f}")
+print(f"So: m' = {m_x:.2f} and d' = {d_x:.2f}")
 
 # visualize the data with matplotlib points to check for correctness:
 data = np.array(data)
@@ -55,6 +94,3 @@ plt.xlabel("x")
 plt.ylabel("y")
 plt.grid()
 plt.show()
-
-
-
