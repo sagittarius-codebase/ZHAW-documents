@@ -266,13 +266,16 @@
 
 
 %title for a section
-\titleformat{\section}{\sffamily\bfseries\boldmath\large}{}{0pt}{\colorbox{section}{\parbox[c][2.5mm]{\linewidth - 4pt}{\textcolor{black}{#1}}}}
+\titleformat{\section}{\sffamily\bfseries\boldmath\large}{}{0pt}{%
+    \colorbox{section}{\parbox[c][2.5mm]{\dimexpr\linewidth - 4pt}{\textcolor{black}{\thesection~#1}}}}
 
 %subsection
-\titleformat{\subsection}{\sffamily\bfseries\boldmath\large}{}{0pt}{\textcolor{subsection}{#1 \raisedrulefill[0.4ex]{1.2pt}}}
+\titleformat{\subsection}{\sffamily\bfseries\boldmath\large}{}{0pt}{%
+    \textcolor{subsection}{\thesubsection~#1 \raisedrulefill[0.4ex]{1.2pt}}}
 
 %subsubsection
-\titleformat{\subsubsection}{\sffamily\bfseries\boldmath}{}{0pt}{\textcolor{subsubsection}{#1 \raisedrulefill[0.4ex]{1pt}}}
+\titleformat{\subsubsection}{\sffamily\bfseries\boldmath}{}{0pt}{%
+    \textcolor{subsubsection}{\thesubsubsection~#1 \raisedrulefill[0.4ex]{1pt}}}
 
 %paragraph
 \titleformat{\paragraph}{\sffamily\bfseries\boldmath\small}{}{0pt}{\textcolor{paragraph}{#1 \raisedrulefill[0.4ex]{0.5pt}}}
