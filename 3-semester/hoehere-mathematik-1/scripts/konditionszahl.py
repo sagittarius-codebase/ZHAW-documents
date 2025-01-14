@@ -15,4 +15,4 @@ f_x = lambda x: np.sin(x)
 
 
 k_value = konditionszahl(f_x, x_value)
-print(f'Condition number K at x = {x_value}: {k_value}')
+print(f'Die Konditionszahl K bei x = {x_value}: {k_value}')
