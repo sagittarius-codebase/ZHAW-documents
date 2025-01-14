@@ -25,4 +25,4 @@ for i in range(MAX_ITERATIONS):
         break
     x_n = x_n_next
 
-print("\nNullstelle (geschätzt):", x_n)
+print("\nNewtonverfahren - Nullstelle (geschätzt):", x_n)
