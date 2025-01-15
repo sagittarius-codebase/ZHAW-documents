@@ -2,7 +2,6 @@ import numpy as np
 
 
 def calc_abs_and_rel_error(matrix_a, vector_b, a_max_dev, b_max_dev):
-
     # Calculate Conditions number of A
     matrix_a_norm_inf = np.linalg.norm(matrix_a, ord=np.inf)
     matrix_a_inv = np.linalg.inv(matrix_a)
@@ -34,8 +33,6 @@ def calc_abs_and_rel_error(matrix_a, vector_b, a_max_dev, b_max_dev):
     print(f"Relative error of x is: {x_rel_error:.2f} so the factor is: {rel_error_factor:.2f}")
 
 
-
-
 if __name__ == "__main__":
     # Define the matrix
     A = np.array(
@@ -43,14 +40,6 @@ if __name__ == "__main__":
          [4, 8.1]],
         dtype=float
     )
-
-    # A = np.array(
-    #     [[3, 9, 12, 12],
-    #      [-2, -5, 7, 2],
-    #      [6, 12, 18, 6],
-    #      [3, 7, 38, 14]],
-    #     dtype=float
-    # )
 
     # Define the vector
     b = np.array([1, 1.5], dtype=float)
