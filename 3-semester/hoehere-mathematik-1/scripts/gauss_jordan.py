@@ -5,14 +5,24 @@ def gauss_jordan(matrix_a, vector_b):
 
     for i in range(len(matrix_a)):
 
+        # normal pivotisation to prevent zero element:
         # Check if pivot element is zero, if so try to swap rows
+        # if matrix_a[i, i] == 0:
+        #     for j in range(i + 1, len(matrix_a)):
+        #         if matrix_a[j, i] != 0:
+        #             matrix_a[[i, j]] = matrix_a[[j, i]]
+        #             vector_b[[i, j]] = vector_b[[j, i]]
+        #             break
+        #         raise ValueError("Matrix is not regular and cannot be solved.")
+
+        # pivotisation to get the biggest element in column:
+        max_row = np.argmax(np.abs(matrix_a[i:, i])) + i
+        # Swap rows
+        matrix_a[[i, max_row]] = matrix_a[[max_row, i]]
+        vector_b[[i, max_row]] = vector_b[[max_row, i]]
+
         if matrix_a[i, i] == 0:
-            for j in range(i + 1, len(matrix_a)):
-                if matrix_a[j, i] != 0:
-                    matrix_a[[i, j]] = matrix_a[[j, i]]
-                    vector_b[[i, j]] = vector_b[[j, i]]
-                    break
-                raise ValueError("Matrix is not regular and cannot be solved.")
+            raise ValueError("Matrix is singular and cannot be solved.")
 
         # get leading ones
         factor = matrix_a[i, i]
