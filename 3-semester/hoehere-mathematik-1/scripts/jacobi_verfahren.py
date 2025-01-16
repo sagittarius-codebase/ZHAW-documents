@@ -2,6 +2,7 @@ import numpy as np
 
 
 def jacobi_verfahren(matrix_a, vector_b, num_of_iterations, vector_x):
+    print("Jacobi-Verfahren")
     d_matrix = np.diag(matrix_a)
     d_matrix_inv = np.diag(1 / d_matrix)
     l_matrix = np.tril(matrix_a, -1)
